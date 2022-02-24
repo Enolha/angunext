@@ -1,0 +1,83 @@
+
+<form [formGroup]="connexionform" class="form-container" >
+   
+    <div class="card text-center">
+      
+      <div class="card-header">
+        <mat-card-title >Connexion</mat-card-title>  
+      </div>
+    
+    </div>
+
+    <!-- <div class="card text-center">
+      <div class="full-width" >
+        <img
+          id="profile-img"
+          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+          class="profile-img-card"
+        />   
+      </div> </div> -->
+    
+
+    <mat-card>
+    <div class="card text-center">
+   
+        <mat-card-content>
+          <div class="full-width" >
+            <img
+              id="profile-img"
+              src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+              class="profile-img-card"
+            />   
+          </div>
+          <div class="card-body">
+            <mat-form-field >
+                <mat-label>Adresse mail</mat-label>
+                     <input matInput placeholder="jean@exemple.com" [formControl]="email" required>      
+                     <mat-icon matSuffix>account_circle</mat-icon>
+
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+              
+              </mat-form-field>
+
+              <br />
+              <!-- <mat-form-field >
+                <input  formControlName="mdp" matInput placeholder="Mot de passe" required>
+                <mat-icon matSuffix>password</mat-icon>
+
+                <mat-error *ngIf="hasError('mdp', 'required')"> Veuillez rentrer un mot de passe</mat-error>
+              </mat-form-field> -->
+
+              <mat-form-field >
+                <mat-label>Mot de passe</mat-label>
+                <input formControlName="mdp" matInput [type]="hide ? 'password' : 'text'" required/>
+                <button
+                  mat-icon-button
+                  matSuffix
+                  (click)="hide = !hide"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide"
+                >
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="hasError('mdp', 'required')"> Veuillez rentrer un mot de passe</mat-error>
+              </mat-form-field>
+          </div>
+          
+        </mat-card-content>
+    
+      
+<mat-card-actions>
+  <button routerLink="../inscription"  mat-raised-button color="primary">Se connecter </button>
+  <mat-card-footer>
+    <a routerLink="../mdpperdu" class="btn btn-link pr-0">Mot de passe oublié ?</a>
+</mat-card-footer>
+</mat-card-actions>
+</div>
+</mat-card>
+
+
+</form>
+
+<!-- 
+<mat-form-field class="full-width" ></mat-form-field> -->

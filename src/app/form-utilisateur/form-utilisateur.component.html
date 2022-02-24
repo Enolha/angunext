@@ -1,0 +1,137 @@
+ <form [formGroup]="profileForm" class="form-container" >
+   
+      <div class="card text-center">
+        <div class="card-header">
+          
+            <mat-card-title >Inscription</mat-card-title>
+          
+        </div>
+      
+      </div>
+      <mat-card>
+       <!-- <mat-card-header>
+        <mat-card-title >Inscription</mat-card-title>
+      </mat-card-header>  -->
+      
+      <div class="card text-center">
+      <mat-card-content>
+        <div class="card-body">
+            <mat-form-field class="full-width" >
+              <input formControlName="prenom"  matInput placeholder="Prénom" required>
+              <mat-error *ngIf="hasError('prenom', 'required')">Veuillez saisir un prénom</mat-error>
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+
+         
+            <mat-form-field class="full-width" >
+              <input  formControlName="nom" matInput placeholder="Nom" required>
+              <mat-error *ngIf="hasError('nom', 'required')"> Veuillez saisir un nom </mat-error>
+              <mat-icon matSuffix>perm_identity</mat-icon>
+            </mat-form-field>
+          
+            <mat-form-field class="full-width" >
+              <input  formControlName="numtel" matInput placeholder="Téléphone" required>
+              <mat-error *ngIf="hasError('nom', 'required')"> Veuillez saisir un numéro de téléphone </mat-error>
+              <mat-icon matSuffix>phone</mat-icon>
+            </mat-form-field>
+            
+
+            <mat-form-field class="full-width" >
+          
+              <input formControlName="ville" matInput placeholder="Ville" required>
+              <mat-error *ngIf="hasError('ville', 'required')"> Veuillez rentrer une ville </mat-error>
+              <mat-icon matSuffix>home</mat-icon>
+            </mat-form-field>
+        
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Date de naissance</mat-label>
+                    <input  formControlName="datenaissance" [min]="minDate" [max]="maxDate" matInput [matDatepicker]="picker" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-error *ngIf="hasError('datenaissance', 'required')"> Veuillez rentrer une date</mat-error>
+                    <mat-datepicker #picker></mat-datepicker>
+                    
+                </mat-form-field>                       
+  
+                </div>
+
+                <div class="form-group">
+              
+                  <label for="cv">CV
+                  <input type="file" class="form-control-file" id="cv"> </label>
+                  
+                </div>
+
+                <input type="checkbox" class="form-check-input" />
+                <label for="acceptTerms" class="form-check-label"> J'accepte de recevoir des offres d'emplois par mail </label>
+                
+                
+      </mat-card-content>
+      
+      <mat-card-actions>
+        <button (click)="saveForm()" mat-raised-button color="primary"> M'inscrire </button>
+      </mat-card-actions>
+    </div>
+    
+    </mat-card>
+  
+  </form> 
+
+  
+  <!-- <form [formGroup]="profileForm" class="form-container" >
+   
+    <div class="card text-center">
+      <div class="card-header">
+        
+          <mat-card-title >Inscription</mat-card-title>
+        
+      </div>
+    </div>
+
+    <div class="card text-center">
+      <mat-card-content>
+        <div class="card-body">
+            <mat-form-field class="full-width" >
+              <input formControlName="prenom"  matInput placeholder="Prénom" required>
+              <mat-error *ngIf="hasError('prenom', 'required')">Veuillez saisir un prénom</mat-error>
+            </mat-form-field>
+                
+            <mat-form-field class="full-width" >
+              <input  formControlName="nom" matInput placeholder="Nom" required>
+              <mat-error *ngIf="hasError('nom', 'required')"> Veuillez saisir un nom </mat-error>
+            </mat-form-field>
+          
+            <mat-form-field class="full-width" >
+              <input  formControlName="numtel" matInput placeholder="Téléphone" required>
+              <mat-error *ngIf="hasError('nom', 'required')"> Veuillez saisir un numéro de téléphone </mat-error>
+            </mat-form-field>
+            
+              <mat-form-field class="full-width" >
+          
+              <input formControlName="ville" matInput placeholder="Ville" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Date de naissance</mat-label>
+              <input  formControlName="datenaissance" matInput [matDatepicker]="picker" required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              
+          </mat-form-field>     
+
+        </div>
+              
+
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">CV
+                  <input type="file" class="form-control-file" id="exampleFormControlFile1"> </label>
+                </div>
+
+                <input type="checkbox" formControlName="accepteoffre" id="accepteoffre" class="form-check-input" />
+                <label for="acceptTerms" class="form-check-label"> J'accepte de recevoir des offre d'emplois par mail </label>
+                
+                
+      </mat-card-content>
+     
+        </div>
+
+</form> -->
